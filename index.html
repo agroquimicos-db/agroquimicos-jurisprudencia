@@ -344,6 +344,19 @@
             color: #0f766e;
         }
 
+        .badge.nuevo {
+            background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+            color: white;
+            font-weight: 700;
+            animation: pulseNew 2s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(236, 72, 153, 0.4);
+        }
+
+        @keyframes pulseNew {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.02); }
+        }
+
         .case-meta {
             display: flex;
             flex-wrap: wrap;
@@ -966,7 +979,7 @@
                     <div class="stat-label">Total de registros</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number" id="glyphosateCases">22</div>
+                    <div class="stat-number" id="glyphosateCases">23</div>
                     <div class="stat-label">Casos de glifosato</div>
                 </div>
                 <div class="stat-card">
@@ -1887,6 +1900,49 @@
                         </div>
                     </div>
 
+                    <!-- CASO: Acuerdo Propuesto Bayer 2026 -->
+                    <div class="case-card"
+                         data-country="usa"
+                         data-product="glyphosate"
+                         data-status="pending"
+                         data-damage="lymphoma"
+                         data-emblematic="false"
+                         data-casetype="extrajudicial"
+                         data-scale="population"
+                         data-search="bayer acuerdo propuesto 2026 roundup glifosato class action settlement">
+                        <div class="case-header">
+                            <h3 class="case-title">Acuerdo Propuesto Bayer - Roundup (2026)</h3>
+                            <div class="badges">
+                                <span class="badge nuevo">🆕 NUEVO</span>
+                                <span class="badge pendiente">⏳ PROPUESTO</span>
+                                <span class="badge no-judicializado">📋 EXTRAJUDICIAL</span>
+                            </div>
+                        </div>
+
+                        <div class="case-meta">
+                            <span class="meta-item">🌍 Estados Unidos</span>
+                            <span class="meta-item">🧪 Glifosato (Roundup)</span>
+                            <span class="meta-item">👥 Poblacional (actuales y futuros demandantes)</span>
+                            <span class="meta-item">📅 Febrero 2026</span>
+                        </div>
+
+                        <div class="case-description">
+                            Bayer propone un acuerdo de clase de $7.25 mil millones para resolver demandas actuales y futuras de usuarios de Roundup con linfoma no-Hodgkin. Pagos individuales entre $10,000 y $165,000 distribuidos durante 17-21 años. Requiere aprobación judicial. Ocurre en contexto de apelación ante Corte Suprema sobre preemption de FIFRA.
+                        </div>
+
+                        <div class="case-tags">
+                            <span class="tag">💰 $7.25 mil millones USD propuestos</span>
+                            <span class="tag">⏱️ Pagos durante 17-21 años</span>
+                            <span class="tag">⚖️ Apelación SCOTUS pendiente</span>
+                            <span class="tag">🔒 Sin admisión de culpa</span>
+                        </div>
+
+                        <div class="case-footer">
+                            <div class="compensation">📋 Requiere aprobación judicial</div>
+                            <button class="view-details-btn" onclick="showDetail(this)">Ver detalles completos →</button>
+                        </div>
+                    </div>
+
                     <!-- CASO 6: Acuerdo Syngenta -->
                     <div class="case-card"
                          data-country="usa"
@@ -1937,7 +1993,7 @@
                     <a class="footer-link" onclick="reportError()">📧 Reportar error</a>
                 </div>
                 <div class="footer-date">
-                    📅 Última actualización: Diciembre 2025
+                    📅 Última actualización: Febrero 2026
                 </div>
             </footer>
         </div>
@@ -3312,6 +3368,177 @@
                         <li class="source-item"><span class="source-icon">🌍</span><div class="source-content"><div class="source-title">EWG: "Bayer-Monsanto Agrees to $10B Settlement"</div><a href="https://www.ewg.org/news-insights/news-release/bayer-monsanto-agrees-10b-settlement-victims-poisoned-roundup-weedkiller" target="_blank" class="source-link">Análisis →</a></div></li>
                     </ul>
                 </div>
+            </div>
+            <button class="back-btn" onclick="hideDetail()" style="margin-top: 20px;">← Volver a la lista</button>
+        </div>
+
+        <!-- VISTA ACUERDO PROPUESTO BAYER 2026 -->
+        <div id="bayer2026DetailView" class="detail-view" style="display: none;">
+            <button class="back-btn" onclick="hideDetail()">← Volver a la lista</button>
+            <div class="detail-header">
+                <h1 class="detail-title">Acuerdo Propuesto Bayer - Roundup (2026)</h1>
+                <div class="badges">
+                    <span class="badge nuevo">🆕 NUEVO</span>
+                    <span class="badge pendiente">⏳ PROPUESTO - REQUIERE APROBACIÓN JUDICIAL</span>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">📋 Resumen del Acuerdo Propuesto</h2>
+                <div class="section-content">
+                    <p><strong>Fecha de anuncio:</strong> 17 de febrero de 2026</p>
+                    <p><strong>Monto total propuesto:</strong> $7.25 mil millones de dólares</p>
+                    <p><strong>Estado:</strong> Propuesta pendiente de aprobación judicial</p>
+                    <p><strong>Alcance:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Usuarios de productos Roundup que compraron o aplicaron personalmente</li>
+                        <li>Diagnóstico de linfoma no-Hodgkin (NHL) únicamente</li>
+                        <li>Incluye demandantes actuales y usuarios que aún no han demandado</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Importante:</strong> Este es el segundo gran acuerdo propuesto, adicional a los ~$11 mil millones ya pagados desde 2020.</p>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">💰 Estructura de Compensaciones</h2>
+                <div class="section-content">
+                    <p><strong>Montos individuales según:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Tipo y extensión de exposición</strong> (ocupacional vs. doméstica)</li>
+                        <li><strong>Edad al diagnóstico de NHL</strong></li>
+                        <li><strong>Tipo específico de NHL</strong> (agresividad)</li>
+                    </ul>
+
+                    <p style="margin-top: 15px;"><strong>Ejemplo de compensación:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Usuario ocupacional con NHL agresivo diagnosticado antes de los 60 años: aproximadamente <strong>$165,000</strong></li>
+                        <li>Montos individuales pueden variar entre 80% y 120% del promedio establecido según circunstancias</li>
+                        <li>Rango general: <strong>$10,000 - $165,000</strong></li>
+                    </ul>
+
+                    <p style="margin-top: 15px;"><strong>Cronograma de pagos:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Duración:</strong> 17-21 años</li>
+                        <li><strong>Estructura:</strong> Pagos iniciales + pagos anuales</li>
+                        <li><strong>Inicio potencial:</strong> 2026 (tras aprobación judicial)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">📅 Cronología y Contexto</h2>
+                <div class="section-content">
+                    <div class="timeline">
+                        <div class="timeline-item"><div class="timeline-date">2018</div><div class="timeline-event">Bayer adquiere Monsanto, hereda >100,000 demandas Roundup</div></div>
+                        <div class="timeline-item"><div class="timeline-date">2018-2019</div><div class="timeline-event">Grandes veredictos contra Bayer: Johnson ($289M→$20.5M), Hardeman ($80M→$25M), Pilliod ($2B→$87M)</div></div>
+                        <div class="timeline-item"><div class="timeline-date">Junio 2020</div><div class="timeline-event">Primer acuerdo masivo: $10.1-10.9 mil millones para ~100,000 casos</div></div>
+                        <div class="timeline-item"><div class="timeline-date">2020-2025</div><div class="timeline-event">Bayer paga ~$11 mil millones. Miles de casos nuevos continúan presentándose</div></div>
+                        <div class="timeline-item"><div class="timeline-date">Marzo 2025</div><div class="timeline-event">Veredicto récord Barnes en Georgia: $2.065 mil millones (resuelto por acuerdo confidencial nov 2025)</div></div>
+                        <div class="timeline-item"><div class="timeline-date">17 Febrero 2026</div><div class="timeline-event"><strong>ANUNCIO DEL ACUERDO PROPUESTO:</strong> $7.25 mil millones</div></div>
+                        <div class="timeline-item"><div class="timeline-date">27 Abril 2026</div><div class="timeline-event"><strong>Audiencia Corte Suprema EE.UU.:</strong> Caso sobre si FIFRA previene demandas por fallo a advertir</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">⚖️ Contexto Legal: Apelación ante Corte Suprema</h2>
+                <div class="section-content">
+                    <p>El acuerdo propuesto ocurre en un momento crítico del litigio:</p>
+
+                    <p style="margin-top: 10px;"><strong>Caso ante SCOTUS:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Cuestión central:</strong> ¿La Ley Federal de Insecticidas, Fungicidas y Rodenticidas (FIFRA) impide demandas estatales por fallo a advertir sobre pesticidas aprobados por la EPA?</li>
+                        <li><strong>Posición de Bayer:</strong> Sí, FIFRA previene estas demandas</li>
+                        <li><strong>Posición de demandantes:</strong> No, FIFRA no previene reclamos estatales</li>
+                        <li><strong>Fecha de audiencia oral:</strong> 27 de abril de 2026</li>
+                    </ul>
+
+                    <p style="margin-top: 15px;"><strong>Impacto potencial:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Si SCOTUS favorece a Bayer: podría bloquear futuras demandas, haciendo el acuerdo más atractivo para demandantes actuales</li>
+                        <li>Si SCOTUS favorece a demandantes: las demandas podrían continuar indefinidamente</li>
+                        <li>Decisión esperada: junio-julio 2026</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">📊 Cifras del Litigio Total (2018-2026)</h2>
+                <div class="section-content">
+                    <p><strong>Demandas presentadas:</strong> ~177,000 en total</p>
+                    <p><strong>Resueltas (acuerdo 2020):</strong> ~100,000 casos</p>
+                    <p><strong>Pendientes (2026):</strong> >60,000 reclamaciones</p>
+
+                    <p style="margin-top: 15px;"><strong>Costo total para Bayer hasta la fecha:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Acuerdo 2020: ~$11 mil millones (pagado)</li>
+                        <li>Acuerdo propuesto 2026: $7.25 mil millones (pendiente)</li>
+                        <li><strong>Total acumulado:</strong> >$18 mil millones</li>
+                    </ul>
+
+                    <p style="margin-top: 15px;"><strong>Veredictos más altos:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Barnes (2025): $2.065B → acuerdo confidencial</li>
+                        <li>McKivison (2024): $2.25B → reducido a $400M</li>
+                        <li>Anderson (2023): $1.56B → reducido a $611M, confirmado en apelación</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">🔍 Efectos sobre los Juicios</h2>
+                <div class="section-content">
+                    <p><strong>Si el acuerdo es aprobado:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Demandantes incluidos en la clase:</strong> Pueden aceptar compensación del acuerdo o optar por salir (opt-out) y litigar individualmente</li>
+                        <li><strong>Juicios individuales:</strong> Los que opten por salir pueden continuar con demandas independientes</li>
+                        <li><strong>Casos futuros:</strong> Usuarios que desarrollen NHL después de la aprobación tendrían cobertura según términos del acuerdo</li>
+                        <li><strong>Presión reducida:</strong> Menos casos irían a juicio, reduciendo exposición de Bayer a veredictos multimillonarios</li>
+                    </ul>
+
+                    <p style="margin-top: 15px;"><strong>Si el acuerdo es rechazado:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Los >60,000 casos pendientes continuarían en litigación</li>
+                        <li>Bayer seguiría expuesta a veredictos masivos de jurados</li>
+                        <li>Dependería más del resultado de la apelación ante SCOTUS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">⚠️ Términos Clave y Limitaciones</h2>
+                <div class="section-content">
+                    <p><strong>NO es admisión de responsabilidad:</strong> Bayer niega que Roundup cause cáncer</p>
+
+                    <p style="margin-top: 10px;"><strong>Limitaciones del acuerdo:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Solo linfoma no-Hodgkin:</strong> Ningún otro tipo de cáncer está cubierto</li>
+                        <li><strong>Solo usuarios directos:</strong> Debe haber comprado o aplicado Roundup personalmente (no exposición indirecta)</li>
+                        <li><strong>Pagos a largo plazo:</strong> Estructura de 17-21 años puede no ser ideal para demandantes con necesidades inmediatas</li>
+                        <li><strong>Aprobación judicial requerida:</strong> El acuerdo debe ser aprobado por tribunal como justo y razonable</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">📚 Fuentes Oficiales Verificadas</h2>
+                <div class="sources-box">
+                    <ul class="sources-list">
+                        <li class="source-item"><span class="source-icon">📰</span><div class="source-content"><div class="source-title">The New Lede: "Bayer proposes $7.25 billion class action settlement in Roundup litigation" (17 feb 2026)</div><a href="https://www.thenewlede.org/2026/02/bayer-proposes-7-25-billion/" target="_blank" class="source-link">Leer artículo completo →</a></div></li>
+                        <li class="source-item"><span class="source-icon">📰</span><div class="source-content"><div class="source-title">STAT News: "Bayer agrees to $7.25 billion proposed settlement over thousands of Roundup cancer lawsuits" (17 feb 2026)</div><a href="https://www.statnews.com/2026/02/17/bayer-settlement-lawsuits-roundup-weedkiller-cancer/" target="_blank" class="source-link">Leer →</a></div></li>
+                        <li class="source-item"><span class="source-icon">📰</span><div class="source-content"><div class="source-title">Bloomberg: "Bayer Seeks to Pay More Than $7 Billion for Roundup Settlements" (17 feb 2026)</div><a href="https://www.bloomberg.com/news/articles/2026-02-17/bayer-to-make-10-5-billion-push-to-settle-roundup-cases" target="_blank" class="source-link">Artículo →</a></div></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">🔗 Relación con Acuerdo Anterior</h2>
+                <p>Este acuerdo propuesto de $7.25 mil millones se suma al acuerdo de 2020 ($10.1-10.9B). En total, Bayer habrá comprometido más de <strong>$18 mil millones</strong> para resolver litigios de Roundup, convirtiéndolo en uno de los acuerdos de responsabilidad por productos tóxicos más grandes de la historia.</p>
+                <p style="margin-top: 10px;"><strong>Comparación:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>Acuerdo 2020:</strong> Casos existentes, pagos más rápidos, ~$100,000 promedio</li>
+                    <li><strong>Acuerdo propuesto 2026:</strong> Actuales + futuros, pagos a largo plazo (17-21 años), estructura escalonada</li>
+                </ul>
             </div>
             <button class="back-btn" onclick="hideDetail()" style="margin-top: 20px;">← Volver a la lista</button>
         </div>
@@ -5252,6 +5479,7 @@
         let francoisDetailHTML = null;
         let baderfDetailHTML = null;
         let bayerDetailHTML = null;
+        let bayer2026DetailHTML = null;
         let paraquatMDLDetailHTML = null;
         let paraquatBellwetherDetailHTML = null;
         let batesDetailHTML = null;
@@ -5278,6 +5506,7 @@
             francoisDetailHTML = document.getElementById('francoisDetailView').innerHTML;
             baderfDetailHTML = document.getElementById('baderfDetailView').innerHTML;
             bayerDetailHTML = document.getElementById('bayerDetailView').innerHTML;
+            bayer2026DetailHTML = document.getElementById('bayer2026DetailView').innerHTML;
             paraquatMDLDetailHTML = document.getElementById('paraquatMDLDetailView').innerHTML;
             paraquatBellwetherDetailHTML = document.getElementById('paraquatBellwetherDetailView').innerHTML;
             batesDetailHTML = document.getElementById('batesDetailView').innerHTML;
@@ -5502,9 +5731,18 @@
                 return;
             }
 
-            // Si es el Acuerdo Global Bayer, mostrar la vista detallada completa (estática)
+            // Si es el Acuerdo Global Bayer 2020, mostrar la vista detallada completa (estática)
             if (title === 'Acuerdo Global Monsanto/Bayer - Roundup (2020)' && bayerDetailHTML) {
                 document.getElementById('detailView').innerHTML = bayerDetailHTML;
+                document.getElementById('mainView').style.display = 'none';
+                document.getElementById('detailView').classList.add('active');
+                window.scrollTo(0, 0);
+                return;
+            }
+
+            // Si es el Acuerdo Propuesto Bayer 2026, mostrar la vista detallada completa (estática)
+            if (title === 'Acuerdo Propuesto Bayer - Roundup (2026)' && bayer2026DetailHTML) {
+                document.getElementById('detailView').innerHTML = bayer2026DetailHTML;
                 document.getElementById('mainView').style.display = 'none';
                 document.getElementById('detailView').classList.add('active');
                 window.scrollTo(0, 0);
@@ -5753,7 +5991,7 @@
                                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                                     <div>
                                         <strong style="color: #2d3748;">📅 Última actualización:</strong>
-                                        <span style="color: #4a5568; margin-left: 8px;">Diciembre 2025</span>
+                                        <span style="color: #4a5568; margin-left: 8px;">Febrero 2026</span>
                                     </div>
                                     <div>
                                         <span style="font-size: 0.9em; color: #718096;">
